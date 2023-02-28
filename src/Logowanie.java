@@ -7,9 +7,9 @@ public class Logowanie {
     public static void zaloguj() {
 
         try {
-            System.out.println("|-----------------------|");
+            System.out.println("|***********************|");
             System.out.println("|Firma Budowlana KrysBud|");
-            System.out.println("|-----------------------|");
+            System.out.println("|***********************|");
             System.out.print("Podaj login: ");
             String loginUSER = scanner.nextLine();
             System.out.print("Podaj hasło: ");
