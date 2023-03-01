@@ -22,11 +22,11 @@ public class ZarzadzanieKontami {
 
             }
 
+            System.out.println(" ");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
-
     public static void dodajPracownika() {
         System.out.print("Podaj login: ");
         String login = scanner.nextLine();
@@ -43,7 +43,6 @@ public class ZarzadzanieKontami {
         System.out.println("Dodano pracownika");
         System.out.println(" ");
     };
-
     public static void zmianaStatusu() {
         wyswietlPracownikow();
 

@@ -10,14 +10,15 @@ public class Logowanie {
             System.out.println("|***********************|");
             System.out.println("|Firma Budowlana KrysBud|");
             System.out.println("|***********************|");
-            System.out.print("Podaj login: ");
+            System.out.print("Login: ");
             String loginUSER = scanner.nextLine();
-            System.out.print("Podaj hasło: ");
+            System.out.print("Hasło: ");
             String hasloUSER = scanner.nextLine();
 
             ResultSet result = ObslugaZapytan.executeSelect("SELECT * FROM `konta` WHERE login='" + loginUSER + "'");
 
             if (result.next()) {
+                int nrPracownika = result.getInt("id_konta");
                 String login = result.getString("login");
                 String haslo = result.getString("haslo");
                 String imie = result.getString("imie");
@@ -28,7 +29,7 @@ public class Logowanie {
                     if (statusKonta.equals("aktywne")) {
                         switch (stanowisko) {
 
-                            case "wlasciciel", "pracownik" -> PanelSkladu.ekranPowitalny(login, haslo, imie, stanowisko);
+                            case "wlasciciel", "pracownik" -> PanelSkladu.ekranPowitalny(login, haslo, imie, stanowisko, nrPracownika);
 
                         }
                     } else {
