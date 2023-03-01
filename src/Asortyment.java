@@ -8,16 +8,16 @@ public class Asortyment {
 
     public static void wyswietlProdukty() {
         try {
-            ResultSet resultPracownik = ObslugaZapytan.executeSelect("SELECT * FROM `produkty`");
+            ResultSet resultSelect = ObslugaZapytan.executeSelect("SELECT * FROM `produkty`");
 
-            while (resultPracownik.next()) {
+            while (resultSelect.next()) {
 
-                String table1 = resultPracownik.getString("id_produktu");
-                String table2 = resultPracownik.getString("nazwa");
-                String table3 = resultPracownik.getString("ilosc");
-                String table4 = resultPracownik.getString("cena_za_sztuke");
+                String table1 = resultSelect.getString("id_produktu");
+                String table2 = resultSelect.getString("nazwa");
+                String table3 = resultSelect.getString("ilosc");
+                String table4 = resultSelect.getString("cena_za_sztuke");
 
-                System.out.println("Nr. " +table1+ " " +table2+ " ilość: " +table3+ " " +table4+ "zł/szt" );
+                System.out.println("Nr. " + table1 + " " + table2 + " ilość: " + table3 + " - " + table4 + "zł/szt");
 
             }
 
@@ -25,6 +25,7 @@ public class Asortyment {
             throw new RuntimeException(e);
         }
     }
+
     public static void dodajProdukt() {
         System.out.println(" ");
 
@@ -44,7 +45,7 @@ public class Asortyment {
                         quantity = scanner.nextInt();
 
                         if (quantity > 0 && productPrice > 0) {
-                            ObslugaZapytan.executeQuery("INSERT INTO `produkty`(`nazwa`, `ilosc`, `cena_za_sztuke`) VALUES ('"+productName+"','"+quantity+"','"+productPrice+"')");
+                            ObslugaZapytan.executeQuery("INSERT INTO `produkty`(`nazwa`, `ilosc`, `cena_za_sztuke`) VALUES ('" + productName + "','" + quantity + "','" + productPrice + "')");
 
                             System.out.println(" ");
                             System.out.println("Dodano nowy produkt.");
@@ -52,7 +53,7 @@ public class Asortyment {
                             System.out.println("Nieprawidłowe wartości. Spróbuj ponownie");
                             dodajProdukt();
                         }
-
+                        scanner.nextLine();
                         break;
                     } catch (InputMismatchException e) {
                         System.out.println("Wprowadzono nieprawidłowe dane, spróbuj jeszcze raz.");
@@ -68,21 +69,24 @@ public class Asortyment {
 
         System.out.println(" ");
     }
+
     public static void usunProdukt() {
         System.out.println(" ");
         wyswietlProdukty();
+        System.out.println(" ");
 
         int produktId;
         while (true) {
-            System.out.print("Podaj nr. przedmiotu do usunięcia: ");
+            System.out.print("Podaj Numer produktu: ");
             try {
                 produktId = scanner.nextInt();
 
-                ObslugaZapytan.executeQuery("DELETE FROM produkty WHERE `produkty`.`id_produktu` = '"+produktId+"'");
+                ObslugaZapytan.executeQuery("UPDATE `produkty` SET `ilosc`='0' WHERE `id_produktu` = '"+produktId+"' ");
 
                 System.out.println(" ");
                 System.out.println("Usunięto produkt ze sprzedaży");
                 System.out.println(" ");
+                scanner.nextLine();
                 break;
             } catch (InputMismatchException e) {
                 System.out.println("Wprowadzono nieprawidłowe dane, spróbuj jeszcze raz.");
@@ -90,13 +94,54 @@ public class Asortyment {
             }
         }
     }
-    public static void zmienCeneProduktu() {
+
+    public static void uzupelnijProdukt() {
         System.out.println(" ");
         wyswietlProdukty();
+        System.out.println(" ");
 
         int produktId;
         while (true) {
-            System.out.print("Podaj nr. napoju: ");
+            System.out.print("Podaj Numer produktu: ");
+            try {
+                produktId = scanner.nextInt();
+
+                int nowaIlosc;
+                while (true) {
+                    System.out.print("Podaj nową ilość: ");
+                    try {
+                        nowaIlosc = scanner.nextInt();
+
+                        ObslugaZapytan.executeQuery("UPDATE `produkty` SET `ilosc`=`ilosc` + '"+nowaIlosc+"' WHERE `id_produktu` = '"+produktId+"' ");
+
+                        System.out.println(" ");
+                        System.out.println("Zaktualizowano ilość produktu.");
+                        System.out.println(" ");
+
+                        scanner.nextLine();
+                        break;
+                    } catch (InputMismatchException e) {
+                        System.out.println("Wprowadzono nieprawidłowe dane, spróbuj jeszcze raz.");
+                        scanner.next();
+                    }
+                }
+                break;
+            } catch (InputMismatchException e) {
+                System.out.println("Wprowadzono nieprawidłowe dane, spróbuj jeszcze raz.");
+                scanner.next();
+            }
+        }
+
+    }
+
+    public static void zmienCeneProduktu() {
+        System.out.println(" ");
+        wyswietlProdukty();
+        System.out.println(" ");
+
+        int produktId;
+        while (true) {
+            System.out.print("Podaj Numer Produktu: ");
             try {
                 produktId = scanner.nextInt();
 
@@ -107,12 +152,13 @@ public class Asortyment {
                         nowaCena = scanner.nextDouble();
 
                         if (nowaCena > 0) {
-                            ObslugaZapytan.executeQuery("UPDATE `produkty` SET `cena_za_sztuke`='"+nowaCena+"' WHERE `id_produktu` = '"+produktId+"'");
+                            ObslugaZapytan.executeQuery("UPDATE `produkty` SET `cena_za_sztuke`='" + nowaCena + "' WHERE `id_produktu` = '" + produktId + "'");
 
                             System.out.println(" ");
                             System.out.println("Zmieniono cenę.");
                             System.out.println(" ");
                         }
+                        scanner.nextLine();
                         break;
                     } catch (InputMismatchException e) {
                         System.out.println("Wprowadzono nieprawidłowe dane, spróbuj jeszcze raz.");

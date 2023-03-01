@@ -1,0 +1,180 @@
+Nr.: 1
+Pracownik obsługujący: KBaran
+Data: 2022-01-01
+Godzina: 09:00:00
+Id_towaru: Cegły
+Ilość sztuk: 100
+Do zapłaty: 1.50zł
+Rodzaj płatności: przelew
+Rodzaj odbioru: odbiór osobisty
+Imię klienta: Jan
+Nazwisko klienta: Kowalski
+Numer telefonu: 111222333
+Adres doręczenia: ul. Kwiatowa 1, Warszawa
+Status zamówienia: złożone
+--
+Nr.: 2
+Pracownik obsługujący: KBaran
+Data: 2022-01-05
+Godzina: 12:00:00
+Id_towaru: Pustaki
+Ilość sztuk: 50
+Do zapłaty: 2.00zł
+Rodzaj płatności: przelew
+Rodzaj odbioru: dostawa
+Imię klienta: Anna
+Nazwisko klienta: Nowak
+Numer telefonu: 444555666
+Adres doręczenia: ul. Długa 2, Wrocław
+Status zamówienia: złożone
+--
+Nr.: 3
+Pracownik obsługujący: PFerenc
+Data: 2022-01-10
+Godzina: 14:00:00
+Id_towaru: Płyty gipsowe 20x20
+Ilość sztuk: 20
+Do zapłaty: 7.50zł
+Rodzaj płatności: gotówka
+Rodzaj odbioru: odbiór osobisty
+Imię klienta: Adam
+Nazwisko klienta: Szymański
+Numer telefonu: 777888999
+Adres doręczenia: ul. Krótka 3, Kraków
+Status zamówienia: w trakcie realizacji
+--
+Nr.: 4
+Pracownik obsługujący: PFerenc
+Data: 2022-01-15
+Godzina: 10:30:00
+Id_towaru: Gwoździe
+Ilość sztuk: 500
+Do zapłaty: 0.50zł
+Rodzaj płatności: przelew
+Rodzaj odbioru: dostawa
+Imię klienta: Katarzyna
+Nazwisko klienta: Wójcik
+Numer telefonu: 111222333
+Adres doręczenia: ul. Prosta 4, Poznań
+Status zamówienia: złożone
+--
+Nr.: 5
+Pracownik obsługujący: PFerenc
+Data: 2022-01-20
+Godzina: 13:00:00
+Id_towaru: Kafelki
+Ilość sztuk: 100
+Do zapłaty: 12.00zł
+Rodzaj płatności: gotówka
+Rodzaj odbioru: odbiór osobisty
+Imię klienta: Wojciech
+Nazwisko klienta: Kaczmarek
+Numer telefonu: 444555666
+Adres doręczenia: ul. Wiejska 5, Gdańsk
+Status zamówienia: wysłane
+--
+Nr.: 6
+Pracownik obsługujący: PFerenc
+Data: 2022-01-25
+Godzina: 15:30:00
+Id_towaru: Blachy
+Ilość sztuk: 50
+Do zapłaty: 10.00zł
+Rodzaj płatności: przelew
+Rodzaj odbioru: dostawa
+Imię klienta: Kamil
+Nazwisko klienta: Lewandowski
+Numer telefonu: 777888999
+Adres doręczenia: ul. Morska 6, Szczecin
+Status zamówienia: anulowane
+--
+Nr.: 7
+Pracownik obsługujący: PFerenc
+Data: 2022-02-01
+Godzina: 11:00:00
+Id_towaru: Pianki montażowe
+Ilość sztuk: 30
+Do zapłaty: 8.00zł
+Rodzaj płatności: gotówka
+Rodzaj odbioru: odbiór osobisty
+Imię klienta: Katarzyna
+Nazwisko klienta: Kowalczyk
+Numer telefonu: 111222333
+Adres doręczenia: ul. Lesna 7, Łódź
+Status zamówienia: wysłane
+--
+Nr.: 8
+Pracownik obsługujący: KBaran
+Data: 2022-02-05
+Godzina: 14:00:00
+Id_towaru: Taśmy izolacyjne
+Ilość sztuk: 10
+Do zapłaty: 15.00zł
+Rodzaj płatności: przelew
+Rodzaj odbioru: dostawa
+Imię klienta: Tomasz
+Nazwisko klienta: Jankowski
+Numer telefonu: 444555666
+Adres doręczenia: ul. Słoneczna 8, Lublin
+Status zamówienia: złożone
+--
+Nr.: 9
+Pracownik obsługujący: KBaran
+Data: 2022-02-10
+Godzina: 12:30:00
+Id_towaru: Druty
+Ilość sztuk: 5
+Do zapłaty: 20.00zł
+Rodzaj płatności: gotówka
+Rodzaj odbioru: odbiór osobisty
+Imię klienta: Magdalena
+Nazwisko klienta: Kalinowska
+Numer telefonu: 777888999
+Adres doręczenia: ul. Szkolna 9, Katowice
+Status zamówienia: wysłane
+--
+Nr.: 10
+Pracownik obsługujący: PFerenc
+Data: 2022-02-15
+Godzina: 09:30:00
+Id_towaru: Farba
+Ilość sztuk: 30
+Do zapłaty: 15.00zł
+Rodzaj płatności: przelew
+Rodzaj odbioru: dostawa
+Imię klienta: Piotr
+Nazwisko klienta: Adamczyk
+Numer telefonu: 111222333
+Adres doręczenia: ul. Zielona 10, Gdynia
+Status zamówienia: w trakcie realizacji
+--
+Nr.: 11
+Pracownik obsługujący: KBaran
+Data: 2023-02-02
+Godzina: 10:56:32
+Id_towaru: Folie budowlane
+Ilość sztuk: 100
+Do zapłaty: 400.00zł
+Rodzaj płatności: przelew
+Rodzaj odbioru: dostawa
+Imię klienta: Konrad
+Nazwisko klienta: Makuszynski
+Numer telefonu: 918473662
+Adres doręczenia: ul .Polna 4
+Status zamówienia: zamkniete
+--
+Nr.: 12
+Pracownik obsługujący: KBaran
+Data: 2023-03-01
+Godzina: 14:13:07
+Id_towaru: Rura PCF 20c
+Ilość sztuk: 10
+Do zapłaty: 100.00zł
+Rodzaj płatności: przelew
+Rodzaj odbioru: wysyłka
+Imię klienta: Kamil Adam
+Nazwisko klienta: Jankowski
+Numer telefonu: 918274663
+Adres doręczenia: ul. wesoła 44
+Status zamówienia: zamknięte
+--

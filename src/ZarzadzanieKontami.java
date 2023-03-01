@@ -18,7 +18,7 @@ public class ZarzadzanieKontami {
                 String table5 = resultPracownik.getString("stanowisko");
                 String table6 = resultPracownik.getString("status_konta");
 
-                System.out.println("Id. Pracownika: " + table1 + " - Login: " + table2 + " - Imię: " + table3 + " - Nazwisko: " + table4 + " - Pełnione stanowisko: " +table5 + " - Status konta: " + table6);
+                System.out.println("Id. Pracownika: " + table1 + " - Login: " + table2 + " - Imię: " + table3 + " - Nazwisko: " + table4 + " - Pełnione stanowisko: " + table5 + " - Status konta: " + table6);
 
             }
 
@@ -27,6 +27,7 @@ public class ZarzadzanieKontami {
             throw new RuntimeException(e);
         }
     }
+
     public static void dodajPracownika() {
         System.out.print("Podaj login: ");
         String login = scanner.nextLine();
@@ -37,12 +38,13 @@ public class ZarzadzanieKontami {
         System.out.print("Podaj nazwisko: ");
         String nazwisko = scanner.nextLine();
 
-        ObslugaZapytan.executeQuery("INSERT INTO `konta`(`login`, `haslo`, `imie`, `nazwisko`, `stanowisko`, `status_konta`) VALUES ('"+login+"', '"+haslo+"', '"+imie+"','"+nazwisko+"', 'pracownik', 'aktywne')");
+        ObslugaZapytan.executeQuery("INSERT INTO `konta`(`login`, `haslo`, `imie`, `nazwisko`, `stanowisko`, `status_konta`) VALUES ('" + login + "', '" + haslo + "', '" + imie + "','" + nazwisko + "', 'pracownik', 'aktywne')");
 
         System.out.println(" ");
         System.out.println("Dodano pracownika");
         System.out.println(" ");
-    };
+    }
+
     public static void zmianaStatusu() {
         wyswietlPracownikow();
 
@@ -51,18 +53,18 @@ public class ZarzadzanieKontami {
         String login = scanner.nextLine();
 
         try {
-            ResultSet resultPracownik = ObslugaZapytan.executeSelect("SELECT `id_konta`, `login`, `imie`, `stanowisko`, status_konta FROM `konta` WHERE login = '"+login+"'");
+            ResultSet resultSelect = ObslugaZapytan.executeSelect("SELECT `id_konta`, `login`, `imie`, `stanowisko`, status_konta FROM `konta` WHERE login = '" + login + "'");
 
-            while (resultPracownik.next()) {
+            while (resultSelect.next()) {
 
-                String table1 = resultPracownik.getString("id_konta");
-                String table2 = resultPracownik.getString("login");
-                String table3 = resultPracownik.getString("imie");
-                String table4 = resultPracownik.getString("stanowisko");
-                String table5 = resultPracownik.getString("status_konta");
+                String table1 = resultSelect.getString("id_konta");
+                String table2 = resultSelect.getString("login");
+                String table3 = resultSelect.getString("imie");
+                String table4 = resultSelect.getString("stanowisko");
+                String table5 = resultSelect.getString("status_konta");
 
                 System.out.println("--");
-                System.out.println("Id. Pracownika: " + table1 + " - Login: " + table2 + " - Imię: " + table3 + " - Pełnione stanowisko: " +table4 + " - Status konta: " + table5);
+                System.out.println("Id. Pracownika: " + table1 + " - Login: " + table2 + " - Imię: " + table3 + " - Pełnione stanowisko: " + table4 + " - Status konta: " + table5);
                 System.out.println("--");
 
             }
@@ -74,8 +76,8 @@ public class ZarzadzanieKontami {
         System.out.print("Podaj nowy status (aktywne/zamkniete): ");
         String statusKonta = scanner.nextLine();
 
-        String zapytanie = "UPDATE `konta` SET `status_konta`='"+statusKonta+"' WHERE `login` = '"+login+"'";
+        String zapytanie = "UPDATE `konta` SET `status_konta`='" + statusKonta + "' WHERE `login` = '" + login + "'";
         ObslugaZapytan.executeQuery(zapytanie);
-    };
+    }
 
 }

@@ -4,11 +4,12 @@ import java.util.Scanner;
 
 public class Logowanie {
     static Scanner scanner = new Scanner(System.in);
+
     public static void zaloguj() {
 
         try {
             System.out.println("|***********************|");
-            System.out.println("|Firma Budowlana KrysBud|");
+            System.out.println("|Skład Budowlany KrysBud|");
             System.out.println("|***********************|");
             System.out.print("Login: ");
             String loginUSER = scanner.nextLine();
@@ -29,7 +30,8 @@ public class Logowanie {
                     if (statusKonta.equals("aktywne")) {
                         switch (stanowisko) {
 
-                            case "wlasciciel", "pracownik" -> PanelSkladu.ekranPowitalny(login, haslo, imie, stanowisko, nrPracownika);
+                            case "wlasciciel", "pracownik" ->
+                                    PanelSkladu.ekranPowitalny(login, haslo, imie, stanowisko, nrPracownika);
 
                         }
                     } else {

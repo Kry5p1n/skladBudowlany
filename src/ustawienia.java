@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ustawienia {
@@ -17,7 +18,7 @@ public class ustawienia {
             String noweHaslo = scanner.nextLine();
 
             if (!stareHaslo.equals(noweHaslo)) {
-                String zapytanie = "UPDATE `konta` SET `haslo`='"+noweHaslo+"' WHERE login ='"+login+"'";
+                String zapytanie = "UPDATE `konta` SET `haslo`='" + noweHaslo + "' WHERE login ='" + login + "'";
                 ObslugaZapytan.executeQuery(zapytanie);
 
                 System.out.println(" ");
@@ -35,5 +36,19 @@ public class ustawienia {
             zmienHaslo(login, haslo);
         }
 
+    }
+
+    public static void bezpieczneCofanie() {
+        while (true) {
+            System.out.print("Wybierz opcje: ");
+            try {
+                int option = scanner.nextInt();
+                scanner.nextLine();
+                break;
+            } catch (InputMismatchException e) {
+                System.out.println("Wprowadź liczbę.");
+                scanner.next();
+            }
+        }
     }
 }
